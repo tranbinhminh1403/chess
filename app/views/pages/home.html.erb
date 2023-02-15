@@ -1,0 +1,29 @@
+
+
+<% if current_user %>
+  <h3><%= current_user.email %></h3>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <%= render partial: "layouts/players" %>
+<% else %>
+  <div id="banner"> 
+    <div class="bg">
+    </div>
+  </div>
+<% end %>
+
+<style>
+  #banner {
+    width: 1250px;
+    height: 800px;
+    
+  }
+  #banner .bg {
+    width: 1000px;
+    height: 500px;
+    paading-top: 50%;
+    background-image: url(<%= asset_path 'bg.jpg' %>);
+  }
+
+  
+
+</style>
