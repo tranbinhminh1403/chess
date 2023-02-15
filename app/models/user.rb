@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
          has_many :playables
          has_many :games, through: :playables
+         has_one_attached :avatar
          def game_in_progress_with(target_user)
           games
             .where(id: target_user.games)
